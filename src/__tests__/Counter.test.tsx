@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from "@testing-library/react";
-import Counter from "./Counter";
+import Counter from "../app/Counter";
 
 test("Counter component", () => {
   // render the component on virtual dom
@@ -30,4 +30,5 @@ test("Counter component", () => {
   // assert the expected result
   // after decrementBtn clicked
   expect(counter).toHaveTextContent("1");
+  expect(counter).toHaveTextContent("-1");
 });
