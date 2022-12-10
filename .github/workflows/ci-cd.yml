@@ -27,7 +27,7 @@ jobs:
   build:
     name: Build
     # run only if test success
-    needs: test
+    # needs: test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
