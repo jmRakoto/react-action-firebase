@@ -1,13 +1,15 @@
 name: React Firebase CI/CD
 
+# on: [push]
+
 on:
   push:
     braches:
       - main
 
 jobs:
-  test:
-    name: Run test
+  test-test:
+    # name: Run test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
@@ -24,10 +26,10 @@ jobs:
       - name: Test project
         run: npm run test
 
-  build:
-    name: Build
+  build-build:
+    # name: Build
     # run only if test success
-    needs: test
+    needs: test-test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
@@ -43,6 +45,7 @@ jobs:
 
       - name: Build project
         run: npm run build
+
       # create artifact
       - name: Archive Production Artifact
         uses: actions/upload-artifact@v3
@@ -50,10 +53,10 @@ jobs:
           name: build
           path: build
 
-  deploy:
-    name: Deploy app
+  deploy-deploy:
+    # name: Deploy app
     # run only if build success
-    needs: build
+    needs: build-build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
