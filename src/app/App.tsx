@@ -16,7 +16,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>Miova ary == {sumResult}</p>
+        <p>Miova ary oooo == {sumResult}</p>
         <p>Kaiza</p>
       </header>
       <Counter />
